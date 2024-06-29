@@ -7,12 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1EKcthbVCRHmOFaKtBltVP1sgiyaOn3eq
 """
 
-pip install statsforecast
-
-pip install datasetsforecast
-
-pip install xlsxwriter
-
 from statsforecast import StatsForecast
 from utilsforecast.losses import *
 from utilsforecast.evaluation import evaluate
@@ -260,6 +254,3 @@ output_file_path = '/content/Output.xlsx'
 with pd.ExcelWriter(output_file_path, engine='xlsxwriter') as writer:
     final_df.to_excel(writer, sheet_name='Final Data', index=False)
     evaluation_df.to_excel(writer, sheet_name='Evaluation Data', index=True)
-
-from google.colab import files
-files.download(output_file_path)
